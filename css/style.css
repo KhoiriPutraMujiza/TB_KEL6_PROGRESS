@@ -1,0 +1,338 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    max-width: 150px; 
+    height: auto;
+}
+
+.navmenu {
+    display: flex;
+}
+
+.navmenu a {
+    color: #2c2c2c;
+    font-size: 14px; 
+    text-transform: capitalize;
+    padding: 10px 15px;
+    font-weight: 400;
+    position: relative;
+    transition: all .42s ease;
+}
+
+.navmenu a::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 20px);
+    height: 1px;
+    background-color: transparent;
+    bottom: -2px;
+    left: 10px; 
+    z-index: 2; 
+    transition: all .42s ease;
+}
+
+.navmenu a:hover::after {
+    width: calc(100% - 20px); 
+    background-color: #2c2c2c;
+}
+
+.navmenu > li {
+    position: relative;
+}
+
+.navmenu > li:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: auto; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: calc(100% - 2px); 
+    left: 0;
+    padding: 0; 
+}
+
+.submenu li {
+    border-bottom: 1px solid #eee;
+}
+
+.submenu li:last-child {
+    border-bottom: none;
+}
+
+.submenu li a {
+    padding: 10px 20px;
+    color: #2c2c2c;
+    display: block;
+    font-size: 12px; 
+    text-transform: capitalize;
+    white-space: nowrap; 
+    text-decoration: none; 
+}
+
+/* Adjust submenu position for cosmetics and body care */
+.navmenu > li:nth-child(2) .submenu,
+.navmenu > li:nth-child(4) .submenu {
+    top: calc(100% - 1px); 
+    left: 0;
+    width: auto; 
+}
+
+/* Underline lebih tebal saat didekatkan kursor untuk Cosmetics */
+.navmenu > li:nth-child(1):hover a::after,
+.navmenu > li:nth-child(3):hover a::after {
+    width: calc(100% - 20px); 
+    background-color: #2c2c2c;
+    height: 2px; /* Lebih tebal */
+}
+
+/* Menghapus garis bawah pada .submenu */
+.submenu li a {
+    padding: 10px 20px;
+    color: #2c2c2c;
+    display: block;
+    font-size: 12px;
+    text-transform: capitalize;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+/* Menambahkan underline pada .navmenu */
+.navmenu a::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 20px);
+    height: 1px;
+    background-color: transparent;
+    bottom: -2px;
+    left: 10px;
+    z-index: 2;
+    transition: all .42s ease;
+}
+
+.navmenu a:hover::after {
+    width: calc(100% - 20px);
+    background-color: #2c2c2c;
+}
+
+/* Underline lebih tebal saat didekatkan kursor untuk Cosmetics */
+.navmenu > li:nth-child(1):hover a::after {
+    width: calc(100% - 20px);
+    background-color: #2c2c2c; 
+    height: 2px;
+}
+
+/* Underline lebih tebal saat didekatkan kursor untuk Body Care */
+.navmenu > li:nth-child(3):hover a::after {
+    width: calc(100% - 20px);
+    background-color: #2c2c2c; 
+    height: 2px;
+}
+
+/* Menghapus garis bawah pada .submenu */
+.submenu li a::after {
+    content: none; 
+}
+
+.submenu li a:hover {
+    background-color: #f4f4f4;
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon i {
+    margin-right: 20px;
+    color: #2c2c2c;
+    font-size: 25px;
+    font-weight: 400;
+    transition: transform .3s ease; 
+}
+
+.nav-icon i:hover {
+    transform: scale(1.2); /* Memperbesar ikon saat hover */
+}
+
+/* Form Container */
+.form-container {
+    max-width: 600px; 
+    margin: 60px auto; /* Adjusted top margin */
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;/* Center align content */
+    text-align: center;
+}
+
+/* Form Heading */
+.form-container h1 {
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: #2c2c2c;
+    font-weight: 600;
+}
+
+/* Form Input Fields */
+.form-container .box {
+    width: calc(100% - 40px); /* Adjusted width */
+    padding: 12px 20px; /* Adjusted padding */
+    margin: 15px 0;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+    color: #2c2c2c;
+}
+
+.form-container .box:focus {
+    border-color: #2c2c2c;
+    background: #fff;
+    color: #000;
+    outline: none;
+}
+
+.form-container .box:hover {
+    border-color: black;
+}
+
+/* Forgot Password Link */
+.form-container a {
+    display: inline-block; /* Mengubah tampilan menjadi inline block */
+    text-align: left;
+    margin: 10px 0;
+    text-align: left;
+    color: #2c2c2c;
+    font-size: 14px;
+    text-decoration: underline;
+    transition: color 0.3s ease, text-decoration-thickness 0.3s ease;
+}
+
+/* Submit Button */
+.form-container .btn {
+    width: 20%; /* Adjusted width */
+    padding: 12px;
+    margin-top: 30px; /* Adjusted top margin */
+    background: black;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: block;
+    margin-left: auto; /* Center the button horizontally */
+    margin-right: auto; /* Center the button horizontally */
+}
+
+.form-container .btn:hover {
+    background: #000;
+}
+
+/* Create Account Links */
+.form-container .create-account {
+    margin-top: 10px; /* Adjusted margin top */
+    text-align: center; /* Center align the text */
+}
+
+.form-container .create-account a {
+    color: #2c2c2c;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.form-container .create-account a:hover {
+    color: #000;
+}
+
+/* Icon Login */
+.icon-login {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Agar ikon berada di tengah secara horizontal */
+    
+}
+
+/* Style untuk setiap ikon */
+/* Icon Login */
+.icon-login {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Agar ikon berada di tengah secara horizontal */
+}
+
+/* Style untuk setiap ikon */
+.icon-login a {
+    width: 10%; /* Lebar setiap ikon */
+    font-size: 24px;
+    color: #2c2c2c;
+    background-color: #f9f9f9; /* Latar belakang standar */
+    padding: 8px; /* Padding */
+    margin-right: 10px; /* Geser ke kanan sedikit */
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* Transisi warna latar belakang dan opacity */
+    display: flex; /* Membuat ikon menjadi petak */
+    align-items: center; /* Memastikan ikon berada di tengah secara vertikal */
+    justify-content: center; /* Memastikan ikon berada di tengah secara horizontal */
+    border-radius: 8px; /* Mengatur sudut border */
+    text-decoration: none; /* Menghapus underline */
+}
+
+/* Style untuk ikon Facebook */
+.icon-login a:nth-child(1) {
+    background-color: #3b5998; /* Warna latar belakang untuk Facebook */
+}
+
+/* Style untuk ikon Google */
+.icon-login a:nth-child(2) {
+    background-color: #db4437; /* Warna latar belakang untuk Google */
+}
+
+/* Style untuk ikon Twitter */
+.icon-login a:nth-child(3) {
+    background-color: #1da1f2; /* Warna latar belakang untuk Twitter */
+}
+
+/* Hover effect */
+.icon-login a:hover {
+    opacity: 0.5; /* Set opacity to 50% on hover */
+}
+
+
+
+
+
+
+
+
+
+
