@@ -67,5 +67,99 @@ if(isset($message)){
 }
 ?>
 
+<style>
+    .slider {
+      width: 100%;
+      height: 510px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .slider img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .slider img:first-child {
+      z-index: 1;
+      opacity: 1;
+    }
+
+    .slider img:nth-child(2) {
+      z-index: 0;
+    }
+
+    .navigation-button {
+      text-align: center;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: #717171;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider">
+    <img src="image1.jpg" alt="Slide 1">
+    <img src="image2.jpg" alt="Slide 2">
+    <img src="image3.jpg" alt="Slide 3">
+  </div>
+
+  <div class="navigation-button">
+    <span class="dot active" onclick="changeSlide(0)"></span>
+    <span class="dot" onclick="changeSlide(1)"></span>
+    <span class="dot" onclick="changeSlide(2)"></span>
+  </div>
+
+  <script>
+    var imgs = document.querySelectorAll('.slider img');
+    var dots = document.querySelectorAll('.dot');
+    var currentImg = 0; // index of the first image
+    const interval = 3000; // duration(speed) of the slide
+
+    function changeSlide(n) {
+      for (var i = 0; i < imgs.length; i++) { // reset
+        imgs[i].style.opacity = 0;
+        dots[i].className = dots[i].className.replace(' active', '');
+      }
+
+      currentImg = n;
+
+      imgs[currentImg].style.opacity = 1;
+      dots[currentImg].className += ' active';
+    }
+
+    function autoSlide() {
+      currentImg = (currentImg + 1) % imgs.length; // update the index number
+      changeSlide(currentImg);
+    }
+
+    var timer = setInterval(autoSlide, interval);
+
+    dots.forEach((dot, i) => {
+      dot.onclick = () => {
+        changeSlide(i);
+      }
+    });
+  </script>
+
 </body>
 </html>
